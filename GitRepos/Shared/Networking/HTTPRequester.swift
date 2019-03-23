@@ -57,8 +57,6 @@ struct HTTPService {
 
   static func request(request: URLRequest, completion: @escaping (() throws -> Data) -> Void) {
     URLSession.shared.dataTask(with: request) { data, response, err in
-      #if DEBUG
-      print("\n")
       print("--- [REQUEST] \(request.httpMethod ?? "") - \(request.url?.absoluteString ?? "")")
       print("--- [HEADER] \(request.allHTTPHeaderFields ?? [:])")
       if let body = request.httpBody {
@@ -67,12 +65,6 @@ struct HTTPService {
       if let status = (response as? HTTPURLResponse)?.statusCode {
         print("--- [STATUS] \(status)")
       }
-      if let res = data, let json = try? JSONSerialization.jsonObject(with: res, options: .allowFragments) {
-        print("--- [RESULT] \(json)\n")
-      } else {
-        print("--- [RESULT] EMPTY\n")
-      }
-      #endif
       if let data = data {
         completion { data }
       } else if let err = err {

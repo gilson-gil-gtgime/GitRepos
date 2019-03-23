@@ -34,7 +34,7 @@ final class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     guard !isLoading else { return }
     guard !hasReachedEnd else { return }
     isLoading = true
-    let nextPage = (currentPage ?? -1) + 1
+    let nextPage = (currentPage ?? 0) + 1
     worker?.fetch(page: nextPage) { [weak self] callback in
       guard let self = self else { return }
       do {
@@ -42,6 +42,7 @@ final class HomeInteractor: HomeBusinessLogic, HomeDataStore {
         self.repositories.append(contentsOf: repositories)
         let response = Home.FetchRepositories.Response(repositories: self.repositories)
         self.presenter?.presentRepositories(response: response)
+        self.currentPage = nextPage
       } catch APIError.endReached {
         self.hasReachedEnd = true
       } catch {

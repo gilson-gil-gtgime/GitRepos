@@ -50,6 +50,7 @@ final class HomeViewController: UIViewController {
   private func setupTableView() {
     homeView?.tableView.register(HomeRepositoryCell.self, forCellReuseIdentifier: HomeRepositoryCell.reuseIdentifier)
     homeView?.tableView.dataSource = self
+    homeView?.tableView.delegate = self
   }
 
   // MARK: - View lifecycle
@@ -105,5 +106,18 @@ extension HomeViewController: UITableViewDataSource {
       repositoryCell.update(with: repository)
     }
     return cell
+  }
+}
+
+// MARK: - UITableView Delegate
+extension HomeViewController: UITableViewDelegate {}
+
+// MARK: - UIScrollView Delegate
+extension HomeViewController: UIScrollViewDelegate {
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let closeToEnd = scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.height
+    if closeToEnd {
+      fetchNextPage()
+    }
   }
 }
