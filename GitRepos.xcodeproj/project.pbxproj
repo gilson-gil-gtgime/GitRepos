@@ -21,6 +21,17 @@
 		2B5120162246727000A2CD20 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5120152246727000A2CD20 /* Owner.swift */; };
 		2B5120182246750100A2CD20 /* APISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5120172246750100A2CD20 /* APISpec.swift */; };
 		2B51201C2246776300A2CD20 /* RepositoryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51201B2246776300A2CD20 /* RepositoryResult.swift */; };
+		2B51202522467AC900A2CD20 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51201F22467AC900A2CD20 /* HomePresenter.swift */; };
+		2B51202622467AC900A2CD20 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51202022467AC900A2CD20 /* HomeWorker.swift */; };
+		2B51202822467AC900A2CD20 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51202222467AC900A2CD20 /* HomeModels.swift */; };
+		2B51202922467AC900A2CD20 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51202322467AC900A2CD20 /* HomeViewController.swift */; };
+		2B51202A22467AC900A2CD20 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51202422467AC900A2CD20 /* HomeInteractor.swift */; };
+		2B51202C22467C5F00A2CD20 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51202B22467C5F00A2CD20 /* HomeView.swift */; };
+		2B51202E22468B8000A2CD20 /* String+Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51202D22468B8000A2CD20 /* String+Home.swift */; };
+		2B51203022468E3700A2CD20 /* HomeRepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51202F22468E3700A2CD20 /* HomeRepositoryCell.swift */; };
+		2B51203322468F3300A2CD20 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51203222468F3300A2CD20 /* URLImageView.swift */; };
+		2B51203622468F5E00A2CD20 /* ImageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51203522468F5E00A2CD20 /* ImageWorker.swift */; };
+		2B51203922468FD000A2CD20 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51203822468FD000A2CD20 /* ReuseIdentifiable.swift */; };
 		50CF8431CC43B7FFBFB81386 /* Pods_GitReposTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902B3497BCF61445E5AF7510 /* Pods_GitReposTests.framework */; };
 		C3DB9F188CD4FAA5137FE719 /* Pods_GitRepos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1678B916464B76009F147EC /* Pods_GitRepos.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +67,17 @@
 		2B5120152246727000A2CD20 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		2B5120172246750100A2CD20 /* APISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISpec.swift; sourceTree = "<group>"; };
 		2B51201B2246776300A2CD20 /* RepositoryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResult.swift; sourceTree = "<group>"; };
+		2B51201F22467AC900A2CD20 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		2B51202022467AC900A2CD20 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		2B51202222467AC900A2CD20 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
+		2B51202322467AC900A2CD20 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2B51202422467AC900A2CD20 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		2B51202B22467C5F00A2CD20 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2B51202D22468B8000A2CD20 /* String+Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Home.swift"; sourceTree = "<group>"; };
+		2B51202F22468E3700A2CD20 /* HomeRepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryCell.swift; sourceTree = "<group>"; };
+		2B51203222468F3300A2CD20 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
+		2B51203522468F5E00A2CD20 /* ImageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWorker.swift; sourceTree = "<group>"; };
+		2B51203822468FD000A2CD20 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 		72A7E7CF496A9B199E8CF6E1 /* Pods-GitReposTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitReposTests.release.xcconfig"; path = "Target Support Files/Pods-GitReposTests/Pods-GitReposTests.release.xcconfig"; sourceTree = "<group>"; };
 		902B3497BCF61445E5AF7510 /* Pods_GitReposTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitReposTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1678B916464B76009F147EC /* Pods_GitRepos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitRepos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,8 +127,9 @@
 		2B511FC622466C0400A2CD20 /* GitRepos */ = {
 			isa = PBXGroup;
 			children = (
-				2B51200122466E9C00A2CD20 /* Shared */,
 				2B511FD922466C1600A2CD20 /* Application */,
+				2B51201D22467AB800A2CD20 /* Scenes */,
+				2B51200122466E9C00A2CD20 /* Shared */,
 				2B511FDA22466C1E00A2CD20 /* Resources */,
 			);
 			path = GitRepos;
@@ -160,9 +183,12 @@
 		2B51200122466E9C00A2CD20 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2B51203122468F2C00A2CD20 /* Views */,
 				2B51201022466FBF00A2CD20 /* Models */,
-				2B51200922466F0D00A2CD20 /* Extensions */,
+				2B51203422468F4E00A2CD20 /* Workers */,
+				2B51203722468FC700A2CD20 /* Protocols */,
 				2B51200222466EA300A2CD20 /* Networking */,
+				2B51200922466F0D00A2CD20 /* Extensions */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -194,6 +220,53 @@
 				2B5120152246727000A2CD20 /* Owner.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2B51201D22467AB800A2CD20 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2B51201E22467ABE00A2CD20 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2B51201E22467ABE00A2CD20 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2B51202322467AC900A2CD20 /* HomeViewController.swift */,
+				2B51202B22467C5F00A2CD20 /* HomeView.swift */,
+				2B51202F22468E3700A2CD20 /* HomeRepositoryCell.swift */,
+				2B51202422467AC900A2CD20 /* HomeInteractor.swift */,
+				2B51202022467AC900A2CD20 /* HomeWorker.swift */,
+				2B51201F22467AC900A2CD20 /* HomePresenter.swift */,
+				2B51202222467AC900A2CD20 /* HomeModels.swift */,
+				2B51202D22468B8000A2CD20 /* String+Home.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2B51203122468F2C00A2CD20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B51203222468F3300A2CD20 /* URLImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2B51203422468F4E00A2CD20 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				2B51203522468F5E00A2CD20 /* ImageWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		2B51203722468FC700A2CD20 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2B51203822468FD000A2CD20 /* ReuseIdentifiable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		5ACE1C901CD56B01C4FF060B /* Pods */ = {
@@ -415,15 +488,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B51201222466FCD00A2CD20 /* Repository.swift in Sources */,
+				2B51203922468FD000A2CD20 /* ReuseIdentifiable.swift in Sources */,
 				2B51200822466EFF00A2CD20 /* String+Networking.swift in Sources */,
+				2B51203022468E3700A2CD20 /* HomeRepositoryCell.swift in Sources */,
 				2B51201C2246776300A2CD20 /* RepositoryResult.swift in Sources */,
+				2B51202A22467AC900A2CD20 /* HomeInteractor.swift in Sources */,
 				2B51200422466EBB00A2CD20 /* HTTPRequester.swift in Sources */,
 				2B51200622466EE400A2CD20 /* HTTPError.swift in Sources */,
+				2B51202E22468B8000A2CD20 /* String+Home.swift in Sources */,
+				2B51202922467AC900A2CD20 /* HomeViewController.swift in Sources */,
 				2B5120162246727000A2CD20 /* Owner.swift in Sources */,
+				2B51202822467AC900A2CD20 /* HomeModels.swift in Sources */,
 				2B511FC822466C0400A2CD20 /* AppDelegate.swift in Sources */,
 				2B51200F22466F6600A2CD20 /* API.swift in Sources */,
 				2B51200B22466F1700A2CD20 /* String+Localized.swift in Sources */,
 				2B512014224671F600A2CD20 /* Constants.swift in Sources */,
+				2B51202C22467C5F00A2CD20 /* HomeView.swift in Sources */,
+				2B51202622467AC900A2CD20 /* HomeWorker.swift in Sources */,
+				2B51203622468F5E00A2CD20 /* ImageWorker.swift in Sources */,
+				2B51202522467AC900A2CD20 /* HomePresenter.swift in Sources */,
+				2B51203322468F3300A2CD20 /* URLImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

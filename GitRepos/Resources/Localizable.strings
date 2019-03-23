@@ -6,4 +6,6 @@
   Copyright © 2019 Gilson Gil. All rights reserved.
 */
 
+"HOME_CANCEL" = "OK";
+
 "SERVICES_ERROR_UNKNOWN" = "Ops! Um erro inexperado ocorreu! Por favor tente novamente!";
