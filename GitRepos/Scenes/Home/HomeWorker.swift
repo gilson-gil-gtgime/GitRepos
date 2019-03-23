@@ -13,7 +13,13 @@
 import UIKit
 
 final class HomeWorker {
+  private var currentTask: URLSessionTask?
+
   func fetch(page: Int, completion: @escaping (() throws -> [Repository]) -> Void) {
-    API.getRepositories(page: page, completion: completion)
+    if currentTask != nil {
+      currentTask?.cancel()
+      currentTask = nil
+    }
+    currentTask = API.getRepositories(page: page, completion: completion)
   }
 }

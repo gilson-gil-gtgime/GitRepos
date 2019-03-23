@@ -57,6 +57,7 @@ final class HomeViewController: UIViewController {
 
   override func loadView() {
     let homeView = HomeView()
+    homeView.viewInteractions = self
     self.homeView = homeView
     self.view = homeView
   }
@@ -69,8 +70,8 @@ final class HomeViewController: UIViewController {
   
   // MARK: - Fetch Next Page
   
-  func fetchNextPage() {
-    let request = Home.FetchRepositories.Request()
+  func fetchNextPage(refresh: Bool = false) {
+    let request = Home.FetchRepositories.Request(refresh: refresh)
     interactor?.fetchNextPage(request: request)
   }
 }
@@ -79,6 +80,9 @@ final class HomeViewController: UIViewController {
 extension HomeViewController: HomeDisplayLogic {
   func displayRepositories(viewModel: Home.FetchRepositories.ViewModel) {
     DispatchQueue.main.async {
+      if self.homeView?.refreshControl.isRefreshing == true {
+        self.homeView?.refreshControl.endRefreshing()
+      }
       self.displayedRepositories = viewModel.displayedRepositories
       self.homeView?.tableView.reloadData()
     }
@@ -119,5 +123,12 @@ extension HomeViewController: UIScrollViewDelegate {
     if closeToEnd {
       fetchNextPage()
     }
+  }
+}
+
+// MARK: - HomeView Interactions
+extension HomeViewController: HomeViewInteractions {
+  func didPullRefresh(at view: HomeView) {
+    fetchNextPage(refresh: true)
   }
 }

@@ -25,7 +25,6 @@ enum APIError: LocalizedError {
 struct API {
   private static var baseUrlString: String {
     return "https://api.github.com"
-//    https://api.github.com/search/repositories?q=language:swift&sort=stars&page=1&per_page=2
   }
 
   public static var baseUrl: URL {
@@ -37,7 +36,7 @@ struct API {
     case searchRepos = "/search/repositories"
   }
 
-  static func getRepositories(page: Int, completion: @escaping (() throws -> [Repository]) -> Void) {
+  static func getRepositories(page: Int, completion: @escaping (() throws -> [Repository]) -> Void) -> URLSessionTask? {
     let method = Method.get
     let path = Endpoints.searchRepos.rawValue
     let parameters: Parameters = [
@@ -46,11 +45,15 @@ struct API {
       "per_page": Constants.repositoriesPerPage,
       "page": page
     ]
-    HTTPService.request(method: method, baseUrl: baseUrl, path: path, parameters: parameters) { callback in
+    return HTTPService.request(method: method, baseUrl: baseUrl, path: path, parameters: parameters) { callback in
       do {
         let data = try callback()
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
+        if let apiErrorPayload = try? decoder.decode(APIErrorPayload.self, from: data) {
+          let error = APIError.custom(apiErrorPayload.message)
+          return completion { throw error }
+        }
         let repositories = try decoder.decode(RepositoryResult.self, from: data).repositories
         if repositories.isEmpty {
           completion { throw APIError.endReached }

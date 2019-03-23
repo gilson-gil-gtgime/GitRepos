@@ -26,37 +26,40 @@ extension Dictionary where Dictionary == Parameters {
 }
 
 struct HTTPService {
-  static func request(method: Method, urlString: String, completion: @escaping (() throws -> Data) -> Void) {
-    guard let url = URL(string: urlString) else { return completion { throw HTTPError.unknown } }
+  static func request(method: Method, urlString: String, completion: @escaping (() throws -> Data) -> Void) -> URLSessionTask? {
+    guard let url = URL(string: urlString) else {
+      completion { throw HTTPError.unknown }
+      return nil
+    }
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = method.rawValue
-    request(request: urlRequest, completion: completion)
+    return request(request: urlRequest, completion: completion)
   }
 
-  static func request(method: Method, baseUrl: URL, path: String, completion: @escaping (() throws -> Data) -> Void) {
+  static func request(method: Method, baseUrl: URL, path: String, completion: @escaping (() throws -> Data) -> Void) -> URLSessionTask? {
     let parameters: Parameters? = nil
-    request(method: method, baseUrl: baseUrl, path: path, parameters: parameters, completion: completion)
+    return request(method: method, baseUrl: baseUrl, path: path, parameters: parameters, completion: completion)
   }
 
   static func request(method: Method,
                       baseUrl: URL,
                       path: String,
                       parameters: Parameters?,
-                      completion: @escaping (() throws -> Data) -> Void) {
-    guard var urlComponents = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true) else { return }
+                      completion: @escaping (() throws -> Data) -> Void) -> URLSessionTask? {
+    guard var urlComponents = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true) else { return nil }
     urlComponents.path = path
     urlComponents.queryItems = parameters?.getEncoded
 
-    guard let url = urlComponents.url else { return }
+    guard let url = urlComponents.url else { return nil }
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = method.rawValue
     urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-    request(request: urlRequest, completion: completion)
+    return request(request: urlRequest, completion: completion)
   }
 
-  static func request(request: URLRequest, completion: @escaping (() throws -> Data) -> Void) {
-    URLSession.shared.dataTask(with: request) { data, response, err in
+  static func request(request: URLRequest, completion: @escaping (() throws -> Data) -> Void) -> URLSessionTask? {
+    let dataTask = URLSession.shared.dataTask(with: request) { data, response, err in
       print("--- [REQUEST] \(request.httpMethod ?? "") - \(request.url?.absoluteString ?? "")")
       print("--- [HEADER] \(request.allHTTPHeaderFields ?? [:])")
       if let body = request.httpBody {
@@ -72,7 +75,9 @@ struct HTTPService {
       } else {
         completion { throw HTTPError.unknown }
       }
-      }.resume()
+    }
+    dataTask.resume()
+    return dataTask
   }
 }
 

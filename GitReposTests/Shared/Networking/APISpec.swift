@@ -19,7 +19,7 @@ final class APISpec: QuickSpec {
       context("when fetching a page of repositories") {
         it("should return a valid list of repositories or return endReached error") {
           waitUntil(timeout: 5) { finished in
-            sut.getRepositories(page: 0) { callback in
+            _ = sut.getRepositories(page: 0) { callback in
               do {
                 let repositories = try callback()
                 expect(repositories).toNot(beEmpty())

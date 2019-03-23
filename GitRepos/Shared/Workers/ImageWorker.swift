@@ -26,7 +26,7 @@ final class ImageWorker {
     }
 
     // download image
-    HTTPService.request(method: .get, urlString: urlString) { [weak self] callback in
+    _ = HTTPService.request(method: .get, urlString: urlString) { [weak self] callback in
       do {
         let data = try callback()
         guard let image = UIImage(data: data) else { return completion(nil) }

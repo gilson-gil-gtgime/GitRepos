@@ -13,6 +13,7 @@ final class URLImageView: UIImageView {
     willSet (value) {
       guard let value = value else { return image = nil }
       guard image == nil || value != imageUrl else { return }
+      image = nil
       fetchImage(from: value)
     }
   }

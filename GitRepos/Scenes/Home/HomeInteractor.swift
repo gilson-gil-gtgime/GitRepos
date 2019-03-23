@@ -31,10 +31,18 @@ final class HomeInteractor: HomeBusinessLogic, HomeDataStore {
   // MARK: - Fetch Next Page
 
   func fetchNextPage(request: Home.FetchRepositories.Request) {
-    guard !isLoading else { return }
-    guard !hasReachedEnd else { return }
+    guard !isLoading || request.refresh else { return }
+    guard !hasReachedEnd || request.refresh else { return }
     isLoading = true
-    let nextPage = (currentPage ?? 0) + 1
+    let nextPage: Int
+    if request.refresh {
+      nextPage = 1
+      self.repositories = []
+      let response = Home.FetchRepositories.Response(repositories: [])
+      self.presenter?.presentRepositories(response: response)
+    } else {
+      nextPage = (currentPage ?? 0) + 1
+    }
     worker?.fetch(page: nextPage) { [weak self] callback in
       guard let self = self else { return }
       do {

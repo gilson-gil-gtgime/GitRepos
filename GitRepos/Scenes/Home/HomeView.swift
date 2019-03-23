@@ -12,6 +12,12 @@ import Cartography
 
 protocol HomeViewLogic: class {
   var tableView: UITableView { get }
+  var refreshControl: UIRefreshControl { get }
+  var viewInteractions: HomeViewInteractions? { get set }
+}
+
+protocol HomeViewInteractions: class {
+  func didPullRefresh(at view: HomeView)
 }
 
 final class HomeView: UIView, HomeViewLogic {
@@ -24,6 +30,15 @@ final class HomeView: UIView, HomeViewLogic {
     tableView.allowsSelection = false
     return tableView
   }()
+
+  public private(set) lazy var refreshControl: UIRefreshControl = {
+    let refreshControl = UIRefreshControl()
+    refreshControl.tintColor = .white
+    refreshControl.addTarget(self, action: #selector(refreshPulled), for: .valueChanged)
+    return refreshControl
+  }()
+
+  weak var viewInteractions: HomeViewInteractions?
 
   init() {
     super.init(frame: .zero)
@@ -46,11 +61,20 @@ final class HomeView: UIView, HomeViewLogic {
 
   private func addSubviews() {
     addSubview(tableView)
+    tableView.addSubview(refreshControl)
   }
 
   private func addConstraints() {
     constrain(self, tableView) { view, tableView in
       tableView.edges == view.edges
     }
+  }
+}
+
+// MARK: - Actions
+@objc
+extension HomeView {
+  func refreshPulled() {
+    viewInteractions?.didPullRefresh(at: self)
   }
 }

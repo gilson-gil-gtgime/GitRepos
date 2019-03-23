@@ -21,7 +21,9 @@ enum Home {
   }
 
   enum FetchRepositories {
-    struct Request {}
+    struct Request {
+      let refresh: Bool
+    }
 
     struct Response {
       let repositories: [Repository]
