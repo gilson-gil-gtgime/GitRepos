@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  GitRepos
+
+  Created by Gilson Gil on 23/03/19.
+  Copyright © 2019 Gilson Gil. All rights reserved.
+*/
+
+"SERVICES_ERROR_UNKNOWN" = "Ops! Um erro inexperado ocorreu! Por favor tente novamente!";
