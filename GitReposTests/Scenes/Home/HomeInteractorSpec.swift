@@ -24,10 +24,16 @@ final class HomeInteractorSpec: QuickSpec {
         let request = Home.FetchRepositories.Request(refresh: false)
         sut.fetchNextPage(request: request)
         it("should have currentPage == 1") {
-          expect(sut.currentPage).toEventually(equal(1))
+          expect(sut.currentPage).toEventually(equal(1),
+                                               timeout: 5,
+                                               pollInterval: 1,
+                                               description: nil)
         }
         it("should have 20 repositories") {
-          expect(sut.repositories.count).toEventually(equal(20))
+          expect(sut.repositories.count).toEventually(equal(20),
+                                                      timeout: 5,
+                                                      pollInterval: 1,
+                                                      description: nil)
         }
       }
     }

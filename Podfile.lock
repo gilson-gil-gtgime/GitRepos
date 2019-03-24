@@ -1,24 +1,38 @@
 PODS:
   - Cartography (3.1.0)
+  - iOSSnapshotTestCase (5.0.2):
+    - iOSSnapshotTestCase/SwiftSupport (= 5.0.2)
+  - iOSSnapshotTestCase/Core (5.0.2)
+  - iOSSnapshotTestCase/SwiftSupport (5.0.2):
+    - iOSSnapshotTestCase/Core
+  - KIF (3.7.4):
+    - KIF/Core (= 3.7.4)
+  - KIF/Core (3.7.4)
   - Nimble (8.0.1)
   - Quick (2.0.0)
 
 DEPENDENCIES:
   - Cartography
+  - iOSSnapshotTestCase
+  - KIF
   - Nimble
   - Quick
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Cartography
+    - iOSSnapshotTestCase
+    - KIF
     - Nimble
     - Quick
 
 SPEC CHECKSUMS:
   Cartography: 1988b7578871a56c036e7af17195cb2190edf18c
+  iOSSnapshotTestCase: 2d51aa06775e95cecb0a1fb9c5c159ccd1dd4596
+  KIF: f3d01c109ee9d1cfe6b0f2bb2aa278e807e971e2
   Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
   Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
 
-PODFILE CHECKSUM: 369ca2aba475b6eccacf45f3106e36e7bd5cff75
+PODFILE CHECKSUM: 66ecacab34b3f56db36e272e3d664b5fb02c77df
 
 COCOAPODS: 1.6.1

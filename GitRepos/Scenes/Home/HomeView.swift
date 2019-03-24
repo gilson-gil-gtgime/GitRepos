@@ -28,6 +28,8 @@ final class HomeView: UIView, HomeViewLogic {
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 80
     tableView.allowsSelection = false
+    tableView.accessibilityLabel = "tableView"
+    tableView.accessibilityIdentifier = "tableView"
     return tableView
   }()
 

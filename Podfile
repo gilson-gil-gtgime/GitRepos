@@ -7,7 +7,9 @@ target 'GitRepos' do
 
   target 'GitReposTests' do
     inherit! :search_paths
-    
+
+    pod 'iOSSnapshotTestCase'
+    pod 'KIF'
     pod 'Quick'
     pod 'Nimble'
 

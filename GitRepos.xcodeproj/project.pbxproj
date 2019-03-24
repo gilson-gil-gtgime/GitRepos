@@ -37,6 +37,9 @@
 		2B5120452246EFC100A2CD20 /* HomeViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5120412246EFC100A2CD20 /* HomeViewControllerSpec.swift */; };
 		2B5120462246EFC100A2CD20 /* HomeInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5120422246EFC100A2CD20 /* HomeInteractorSpec.swift */; };
 		2B51204A2246F38400A2CD20 /* HomeRepositoryCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5120492246F38400A2CD20 /* HomeRepositoryCellSpec.swift */; };
+		2B51204C2247096D00A2CD20 /* HomeTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51204B2247096D00A2CD20 /* HomeTestCase.swift */; };
+		2B51204E22470BE500A2CD20 /* XCTestCase+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51204D22470BE500A2CD20 /* XCTestCase+Swift.swift */; };
+		2B5120502247130700A2CD20 /* HomeSnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51204F2247130700A2CD20 /* HomeSnapshotTestCase.swift */; };
 		50CF8431CC43B7FFBFB81386 /* Pods_GitReposTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902B3497BCF61445E5AF7510 /* Pods_GitReposTests.framework */; };
 		C3DB9F188CD4FAA5137FE719 /* Pods_GitRepos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1678B916464B76009F147EC /* Pods_GitRepos.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +91,9 @@
 		2B5120412246EFC100A2CD20 /* HomeViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerSpec.swift; sourceTree = "<group>"; };
 		2B5120422246EFC100A2CD20 /* HomeInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorSpec.swift; sourceTree = "<group>"; };
 		2B5120492246F38400A2CD20 /* HomeRepositoryCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryCellSpec.swift; sourceTree = "<group>"; };
+		2B51204B2247096D00A2CD20 /* HomeTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTestCase.swift; sourceTree = "<group>"; };
+		2B51204D22470BE500A2CD20 /* XCTestCase+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Swift.swift"; sourceTree = "<group>"; };
+		2B51204F2247130700A2CD20 /* HomeSnapshotTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSnapshotTestCase.swift; sourceTree = "<group>"; };
 		72A7E7CF496A9B199E8CF6E1 /* Pods-GitReposTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitReposTests.release.xcconfig"; path = "Target Support Files/Pods-GitReposTests/Pods-GitReposTests.release.xcconfig"; sourceTree = "<group>"; };
 		902B3497BCF61445E5AF7510 /* Pods_GitReposTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitReposTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1678B916464B76009F147EC /* Pods_GitRepos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitRepos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +177,7 @@
 				2B51203F2246EFAE00A2CD20 /* Scenes */,
 				2B511FF722466E6E00A2CD20 /* Shared */,
 				2B511FF122466DF300A2CD20 /* Info.plist */,
+				2B51204D22470BE500A2CD20 /* XCTestCase+Swift.swift */,
 			);
 			path = GitReposTests;
 			sourceTree = "<group>";
@@ -304,6 +311,8 @@
 				2B5120412246EFC100A2CD20 /* HomeViewControllerSpec.swift */,
 				2B5120492246F38400A2CD20 /* HomeRepositoryCellSpec.swift */,
 				2B5120422246EFC100A2CD20 /* HomeInteractorSpec.swift */,
+				2B51204B2247096D00A2CD20 /* HomeTestCase.swift */,
+				2B51204F2247130700A2CD20 /* HomeSnapshotTestCase.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -460,15 +469,19 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GitReposTests/Pods-GitReposTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/KIF/KIF.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSSnapshotTestCase/FBSnapshotTestCase.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KIF.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -557,8 +570,11 @@
 			files = (
 				2B51203E2246EF1100A2CD20 /* ImageWorkerSpec.swift in Sources */,
 				2B5120452246EFC100A2CD20 /* HomeViewControllerSpec.swift in Sources */,
+				2B5120502247130700A2CD20 /* HomeSnapshotTestCase.swift in Sources */,
+				2B51204C2247096D00A2CD20 /* HomeTestCase.swift in Sources */,
 				2B5120182246750100A2CD20 /* APISpec.swift in Sources */,
 				2B51204A2246F38400A2CD20 /* HomeRepositoryCellSpec.swift in Sources */,
+				2B51204E22470BE500A2CD20 /* XCTestCase+Swift.swift in Sources */,
 				2B5120462246EFC100A2CD20 /* HomeInteractorSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
