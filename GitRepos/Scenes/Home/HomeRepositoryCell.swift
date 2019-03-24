@@ -26,6 +26,7 @@ final class HomeRepositoryCell: UITableViewCell {
     let label = UILabel()
     label.font = UIFont.boldSystemFont(ofSize: 18)
     label.setContentHuggingPriority(.required, for: .vertical)
+    label.tag = 1
     return label
   }()
 
@@ -33,12 +34,14 @@ final class HomeRepositoryCell: UITableViewCell {
     let label = UILabel()
     label.font = UIFont.boldSystemFont(ofSize: 16)
     label.setContentHuggingPriority(.required, for: .vertical)
+    label.tag = 2
     return label
   }()
 
   private let authorNameLabel: UILabel = {
     let label = UILabel()
     label.font = UIFont.systemFont(ofSize: 16)
+    label.tag = 3
     return label
   }()
 
@@ -47,6 +50,7 @@ final class HomeRepositoryCell: UITableViewCell {
     imageView.contentMode = .scaleAspectFit
     imageView.layer.masksToBounds = true
     imageView.layer.cornerRadius = 4
+    imageView.tag = 4
     return imageView
   }()
 

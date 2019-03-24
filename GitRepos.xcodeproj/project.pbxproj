@@ -32,6 +32,11 @@
 		2B51203322468F3300A2CD20 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51203222468F3300A2CD20 /* URLImageView.swift */; };
 		2B51203622468F5E00A2CD20 /* ImageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51203522468F5E00A2CD20 /* ImageWorker.swift */; };
 		2B51203922468FD000A2CD20 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51203822468FD000A2CD20 /* ReuseIdentifiable.swift */; };
+		2B51203B2246ED4400A2CD20 /* APIErrorPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51203A2246ED4400A2CD20 /* APIErrorPayload.swift */; };
+		2B51203E2246EF1100A2CD20 /* ImageWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51203D2246EF1100A2CD20 /* ImageWorkerSpec.swift */; };
+		2B5120452246EFC100A2CD20 /* HomeViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5120412246EFC100A2CD20 /* HomeViewControllerSpec.swift */; };
+		2B5120462246EFC100A2CD20 /* HomeInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5120422246EFC100A2CD20 /* HomeInteractorSpec.swift */; };
+		2B51204A2246F38400A2CD20 /* HomeRepositoryCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5120492246F38400A2CD20 /* HomeRepositoryCellSpec.swift */; };
 		50CF8431CC43B7FFBFB81386 /* Pods_GitReposTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902B3497BCF61445E5AF7510 /* Pods_GitReposTests.framework */; };
 		C3DB9F188CD4FAA5137FE719 /* Pods_GitRepos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1678B916464B76009F147EC /* Pods_GitRepos.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +83,11 @@
 		2B51203222468F3300A2CD20 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
 		2B51203522468F5E00A2CD20 /* ImageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWorker.swift; sourceTree = "<group>"; };
 		2B51203822468FD000A2CD20 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
+		2B51203A2246ED4400A2CD20 /* APIErrorPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorPayload.swift; sourceTree = "<group>"; };
+		2B51203D2246EF1100A2CD20 /* ImageWorkerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWorkerSpec.swift; sourceTree = "<group>"; };
+		2B5120412246EFC100A2CD20 /* HomeViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerSpec.swift; sourceTree = "<group>"; };
+		2B5120422246EFC100A2CD20 /* HomeInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorSpec.swift; sourceTree = "<group>"; };
+		2B5120492246F38400A2CD20 /* HomeRepositoryCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryCellSpec.swift; sourceTree = "<group>"; };
 		72A7E7CF496A9B199E8CF6E1 /* Pods-GitReposTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitReposTests.release.xcconfig"; path = "Target Support Files/Pods-GitReposTests/Pods-GitReposTests.release.xcconfig"; sourceTree = "<group>"; };
 		902B3497BCF61445E5AF7510 /* Pods_GitReposTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitReposTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1678B916464B76009F147EC /* Pods_GitRepos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitRepos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +168,7 @@
 		2B511FEE22466DF300A2CD20 /* GitReposTests */ = {
 			isa = PBXGroup;
 			children = (
+				2B51203F2246EFAE00A2CD20 /* Scenes */,
 				2B511FF722466E6E00A2CD20 /* Shared */,
 				2B511FF122466DF300A2CD20 /* Info.plist */,
 			);
@@ -167,6 +178,7 @@
 		2B511FF722466E6E00A2CD20 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2B51203C2246EF0400A2CD20 /* Workers */,
 				2B511FF822466E7600A2CD20 /* Networking */,
 			);
 			path = Shared;
@@ -218,6 +230,7 @@
 				2B51201B2246776300A2CD20 /* RepositoryResult.swift */,
 				2B51201122466FCD00A2CD20 /* Repository.swift */,
 				2B5120152246727000A2CD20 /* Owner.swift */,
+				2B51203A2246ED4400A2CD20 /* APIErrorPayload.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,6 +280,32 @@
 				2B51203822468FD000A2CD20 /* ReuseIdentifiable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2B51203C2246EF0400A2CD20 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				2B51203D2246EF1100A2CD20 /* ImageWorkerSpec.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		2B51203F2246EFAE00A2CD20 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2B5120402246EFB600A2CD20 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2B5120402246EFB600A2CD20 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2B5120412246EFC100A2CD20 /* HomeViewControllerSpec.swift */,
+				2B5120492246F38400A2CD20 /* HomeRepositoryCellSpec.swift */,
+				2B5120422246EFC100A2CD20 /* HomeInteractorSpec.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		5ACE1C901CD56B01C4FF060B /* Pods */ = {
@@ -504,6 +543,7 @@
 				2B51200B22466F1700A2CD20 /* String+Localized.swift in Sources */,
 				2B512014224671F600A2CD20 /* Constants.swift in Sources */,
 				2B51202C22467C5F00A2CD20 /* HomeView.swift in Sources */,
+				2B51203B2246ED4400A2CD20 /* APIErrorPayload.swift in Sources */,
 				2B51202622467AC900A2CD20 /* HomeWorker.swift in Sources */,
 				2B51203622468F5E00A2CD20 /* ImageWorker.swift in Sources */,
 				2B51202522467AC900A2CD20 /* HomePresenter.swift in Sources */,
@@ -515,7 +555,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B51203E2246EF1100A2CD20 /* ImageWorkerSpec.swift in Sources */,
+				2B5120452246EFC100A2CD20 /* HomeViewControllerSpec.swift in Sources */,
 				2B5120182246750100A2CD20 /* APISpec.swift in Sources */,
+				2B51204A2246F38400A2CD20 /* HomeRepositoryCellSpec.swift in Sources */,
+				2B5120462246EFC100A2CD20 /* HomeInteractorSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
